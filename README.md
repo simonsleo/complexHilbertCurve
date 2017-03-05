@@ -1,2 +1,2 @@
-# complexHilbertCurve
-complex Hilbert CUrve
+# HilbertCurveImage
+visualizing time series as hilbert curve   
