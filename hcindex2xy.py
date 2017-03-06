@@ -59,7 +59,7 @@ def hcindex2xy_ab(n,hcindex):
 #-------------------hcindex2xy_ba------------------------------------
 def hcindex2xy_ba(n,hcindex):
     assert(hcindex <= n**2 - 1)
-    x,y = hcindex2xy_ab(n,n**2-1-hcindex)
+    x,y = hcindex2xy_ab(n,hcindex)
     y   = -y #force the vertex B to be (0,0) by reflecting
     return x,y
 ########################################################################
