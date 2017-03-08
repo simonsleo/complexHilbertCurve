@@ -117,9 +117,9 @@ def hcindex2xy_ad(n,hcindex):
 #-------------------hcindex2xy_da-------------------------------------
 def hcindex2xy_da(n,hcindex):
     assert(hcindex <= n**2 - 1)
-    x,y = hcindex2xy_ad(n,n**2-1-hcindex) # hilbert curve symmetry
+    x,y = hcindex2xy_ad(n,hcindex) # hilbert curve symmetry
 # force the vertex D which loacts at (n**2-1,0) in operator hcindex2xy_ad to be (0,0)
-    x =x-(n-1)
+    x   =-x
     return x,y
 #####################################################################
 
@@ -158,7 +158,7 @@ def hcindex2xy_cb(n,hcindex):
 #--------------hcindex2xy_ac ---------------------------------------
 def hcindex2xy_ac(n,hcindex):
     assert(hcindex <= n**2 - 1)
-    positions = ([0,0],[0,1],[1,0],[1,1]) #tuple
+    positions = ([0,0],[1,0],[0,1],[1,1]) #tuple
 
 
     if n >= 4:
