@@ -14,7 +14,7 @@ from optparse import OptionParser
 import os
 import sys
 
-def processFile(filename, options_level,options_max,options_normalize,cc,rr):
+def processFile(filename,n,options_max,options_normalize,cc,rr):
     """
     read in the input and return the corresponding matrix
     input is two column, whitespace separated data. col1 is
@@ -24,8 +24,8 @@ def processFile(filename, options_level,options_max,options_normalize,cc,rr):
     """
 
     #x<<y, This is the same as multiplying x by 2**y.
-    n = 1 << options_level
-    m = numpy.zeros((n, n))
+    #n = 1 << options_level
+    m = numpy.zeros((n, n)) #n is the subsquare number on one axial
     x = []
     y = []
     f = open(filename, 'r')
@@ -64,5 +64,6 @@ def processFile(filename, options_level,options_max,options_normalize,cc,rr):
     v = [numpy.min(cc)-2, numpy.max(cc)+2,numpy.min(rr)-1,numpy.max(rr)+1]
     plt.axis(v)
     plt.subplot(222)
-    plt.pcolor(m)   
+    plt.pcolor(m)
+    plt.colorbar()	
     return m
